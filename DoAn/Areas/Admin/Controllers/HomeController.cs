@@ -33,9 +33,9 @@ namespace DoAn.Areas.Admin.Controllers
         public ActionResult RequestLogin(string username, string password)
         {
             bool Key = false;
-            AdminDetail admin = new AdminDetail();
-            //admin.Login(username,password);
-            if (username == "admin" && password == "admin") Key = true;
+            int Count;
+            Count = context.AdminAccount.Where(s => s.Username == username && s.Password == password).Count();
+            if (Count >0) Key = true;
             else Key = false;
             if (Key == true) ViewBag.Key = "Welcome Admin";
             for(int count = 3; count < 0; count--)
