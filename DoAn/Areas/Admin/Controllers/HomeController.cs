@@ -37,11 +37,16 @@ namespace DoAn.Areas.Admin.Controllers
             Count = context.AdminAccount.Where(s => s.Username == username && s.Password == password).Count();
             if (Count >0) Key = true;
             else Key = false;
-            if (Key == true) ViewBag.Key = "Welcome Admin";
-            for(int count = 3; count < 0; count--)
+            if (Key == true)
             {
-                if (count == 0) RedirectToAction("Index"); 
+                ViewBag.Key = "Welcome Admin";
+                ViewBag.Key1 = Key;
             }
+            else
+            {
+                ViewBag.Key1 = Key;
+                ViewBag.Key = "Nhập lại tài khoản, mật khẩu";
+            }             
             return View();
         }
         public ActionResult Add(Laptop laptop)
