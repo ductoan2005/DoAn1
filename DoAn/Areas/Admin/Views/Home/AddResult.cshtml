@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "AddResult";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Message</h2>
+<form action="@Url.Action("Index","Home")">
+    <input type="submit" value="Back to List" class="btn btn-default" />
+</form>
+

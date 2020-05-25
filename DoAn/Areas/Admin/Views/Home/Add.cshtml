@@ -1,0 +1,57 @@
+﻿
+@using DoAn.Areas.Admin.Models
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Laptop
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <form action="@Url.Action("AddResult","Home")" method="post" class="form-group form-horizontal" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Tên sản phẩm : </label>
+                <div class="col-sm-6">
+                    <input type="text" id="ten" name="ten" placeholder="Nhập vào tên sản phẩm" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Giá tiền : </label>
+                <div class="col-sm-6">
+                    <input type="number" id="giatien" name="giatien" placeholder="Nhập vào giá tiền" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Thông số : </label>
+                <div class="col-sm-6">
+                    <textarea id="thongso" name="thongso" placeholder="Nhập vào thông sổ sản phẩm"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-form-label">Tên Thương Hiệu</label>
+                <div class="col-sm-6">
+                    @Html.DropDownList("MaTH",null ,"Select One", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaTH, "", new { @class = "text-danger" })
+                </div>
+                <span asp-validation-for="MaThuongHieu"></span>
+            </div>
+            <div class="form-group">
+                <label>Hình Ảnh : </label>
+                <div class="col-sm-6">
+                    <input type="file" id="hinhanh" name="hinhanh"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Thêm" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
