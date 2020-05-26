@@ -30,24 +30,33 @@ namespace DoAn.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult RequestLogin(string username, string password)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string username, string password)
         {
-            bool Key = false;
-            int Count;
-            Count = context.AdminAccount.Where(s => s.Username == username && s.Password == password).Count();
-            if (Count >0) Key = true;
-            else Key = false;
-            if (Key == true)
+            if(ModelState.IsValid)
             {
-                ViewBag.Key = "Welcome Admin";
-                ViewBag.Key1 = Key;
+                int Count;
+                Count = context.AdminAccount.Where(s => s.Username == username && s.Password == password).Count();
+                if (Count > 0)
+                {
+                    Session["DisplayName"] = context.AdminAccount.FirstOrDefault().DisplayName;
+                    Session["AdminID"] = context.AdminAccount.FirstOrDefault().AdminID;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Error = "Login Failed";
+                    return RedirectToAction("Login"); 
+                }
             }
-            else
-            {
-                ViewBag.Key1 = Key;
-                ViewBag.Key = "Nhập lại tài khoản, mật khẩu";
-            }             
+            
             return View();
+        }
+        public  ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
         }
         public ActionResult Add(Laptop laptop)
         {

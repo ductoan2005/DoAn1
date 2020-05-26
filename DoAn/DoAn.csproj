@@ -226,7 +226,6 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Home\AddResult.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\RequestLogin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\TimTheoTen.cshtml" />
     <Content Include="Areas\Admin\Views\Home\AdminProfile.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Xoa.cshtml" />
