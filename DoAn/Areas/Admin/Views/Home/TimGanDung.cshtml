@@ -12,6 +12,7 @@
                 <tr style="text-align:center">
                     <th>ID</th>
                     <th>Tên Sản Phẩm</th>
+                    <th>Hình Ảnh</th>
                     <th>Giá Tiền</th>
                     <th>Tên Thương Hiệu</th>
                     <th>Thông Số</th>
@@ -19,13 +20,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in ViewBag.ds)
+                @foreach (var item in ViewBag.c)
                 {
                     <tr>
                         <th>@item.LaptopID</th>
                         <th>@item.TenLaptop</th>
+                        <th><img src="~/Areas/Content/img/@item.Image" style="width:150px;height:100px" /></th>
                         <th>@item.Giatien</th>
-                        <th>@item.MaTH</th>
+                        <th>@item.ThuongHieu.TenThuongHieu</th>
                         <th>@item.ThongSo</th>
                         <th style="text-align:center">
                             <a href="@Url.Action("Xoa","Home", new { id=item.LaptopID})" class="btn btn-outline-danger">Xoá</a>

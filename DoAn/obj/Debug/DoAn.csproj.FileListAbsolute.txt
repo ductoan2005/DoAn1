@@ -77,6 +77,6 @@ D:\Đồ Án\DoAn\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Đồ Án\DoAn\bin\Microsoft.Owin.Security.Google.xml
 D:\Đồ Án\DoAn\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Đồ Án\DoAn\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Đồ Án\DoAn\obj\Debug\DoAn.csprojResolveAssemblyReference.cache
 D:\Đồ Án\DoAn\obj\Debug\DoAn.dll
 D:\Đồ Án\DoAn\obj\Debug\DoAn.pdb
-D:\Đồ Án\DoAn\obj\Debug\DoAn.csprojResolveAssemblyReference.cache

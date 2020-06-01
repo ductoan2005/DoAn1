@@ -28,7 +28,7 @@
                         <th>Hình Ảnh</th>
                         <th>Tên Sản Phẩm</th>                        
                         <th>Giá Tiền</th>
-                        <th>Mã Thương Hiệu</th>
+                        <th>Tên Thương Hiệu</th>
                         <th>Thông Số</th>
                         <th></th>
                     </tr>
@@ -38,10 +38,10 @@
                     {
                         <tr>
                             <th>@item.LaptopID</th>
-                            <th><img src="~/Areas/Content/img/@item.Image" style="width:25%;height:40%" /></th>
+                            <th><img src="~/Areas/Content/img/@item.Image" style="width:150px;height:100px" /></th>
                             <th>@item.TenLaptop</th>                            
                             <th>@item.Giatien</th>
-                            <th>@item.MaTH</th>
+                            <th>@item.ThuongHieu.TenThuongHieu</th>
                             <th>@item.ThongSo</th>
                             <th style="text-align:center">
                                 <a href="@Url.Action("Xoa","Home", new { id=item.LaptopID})" class="btn btn-outline-danger">Xoá</a>
@@ -49,16 +49,16 @@
                             </th>
                         </tr>
                     }
-                    <tr>
-                        <td>
-                            @for(int i=1; i<ViewBag.count+1;i++)
-                            {
-                                <a href="@Url.Action("Index","Home", new { id = i})" class="btn btn-outline-primary">@i</a>
-                            }
-                        </td>
-                    </tr>
+                                                
                 </tbody>
             </table>
+            <div  style="text-align:center">
+                @for (int i = 0; i < ViewBag.count; i++)
+                {
+                    <a href="@Url.Action("Index","Home", new { id = i})" class="btn btn-outline-primary">@i</a>
+                }
+            </div>
+            
         </div>
     </div>
 </body>

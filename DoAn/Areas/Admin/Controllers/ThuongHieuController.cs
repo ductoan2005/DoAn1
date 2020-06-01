@@ -10,6 +10,7 @@ using DoAn.Areas.Admin.Models;
 
 namespace DoAn.Areas.Admin.Controllers
 {
+
     public class ThuongHieuController : Controller
     {
         private CSDLContext db = new CSDLContext();

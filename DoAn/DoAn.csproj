@@ -19,8 +19,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -210,6 +210,8 @@
     <Content Include="Areas\Content\img\cam-galaxy-note-7-cam-tren-may-bay-dec2517.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\user\img\apple-touch-icon.png" />
+    <Content Include="Content\user\img\favicon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -241,6 +243,8 @@
     <Content Include="Areas\Admin\Views\Home\SXTen.cshtml" />
     <Content Include="Areas\Admin\Views\Home\SXGiaTien.cshtml" />
     <Content Include="Areas\Admin\Views\Home\SXGiaTienGiam.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\ResultDoiMatKhau.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\DoiMatKhau.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -253,7 +257,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -273,6 +279,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,7 +287,12 @@
     <Folder Include="Areas\Content\js\" />
     <Folder Include="Areas\Content\scss\" />
     <Folder Include="Areas\Content\vendor\" />
-    <Folder Include="Content\img\" />
+    <Folder Include="Content\user\css\" />
+    <Folder Include="Content\user\img\carousel\" />
+    <Folder Include="Content\user\img\clients\" />
+    <Folder Include="Content\user\img\products\" />
+    <Folder Include="Content\user\js\" />
+    <Folder Include="Content\user\vendor\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -312,8 +324,7 @@
           <IISUrl>http://localhost:29602/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>https://localhost</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

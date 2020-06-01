@@ -16,15 +16,23 @@ namespace DoAn.Areas.Admin.Models
             }
             return list;
         }
-        //public bool Login(string username, string password)
-        //{
-        //    bool login;
-        //    using (CSDLContext db = new CSDLContext())
-        //    {
-        //        db.AdminAccount.Where(p=>p.Username == username && p.Password==password);
-
-        //    }
-        //    return login;
-        //}
+        public int DoiMatKhau(int id,string matkhau)
+        {
+            using (CSDLContext db = new CSDLContext())
+            {
+                AdminAccount admin = db.AdminAccount.Find(id);
+                admin.Password = matkhau;
+                db.Entry(admin).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            return 1;
+        }
+        public AdminAccount Tim(int id)
+        {
+            using (CSDLContext db = new CSDLContext())
+            {
+                return db.AdminAccount.Find(id);
+            }
+        }
     }
 }
